@@ -28,3 +28,8 @@ func fileControlKitDidSelectedFile(with file: FileItemModel) {
         
 }
 ```
+##### cocoapods
+
+```
+pod 'FileControlKit','~> 1.0.0'
+```

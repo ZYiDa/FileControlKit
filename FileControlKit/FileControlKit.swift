@@ -261,7 +261,7 @@ extension FileController{
     //MARK: - 创建时间
     private func getFileCreateTime(withPath path:String)->String?{
         
-        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]?){
+        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]){
             if let createTime:Date = attribute[FileAttributeKey.creationDate] as? Date {
                 return createTime.toString()
             }
@@ -272,7 +272,7 @@ extension FileController{
     
     //MARK: - 子文件数量
     private func getChildrenFileCount(withPath path:String)->Int?{
-        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]?){
+        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]){
             if let count:Int = attribute[FileAttributeKey.referenceCount] as? Int {
                 return count
             }
@@ -283,7 +283,7 @@ extension FileController{
     
     //MARK: - 最后修改时间
     private func getModificationDate(withPath path:String)->String?{
-        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]?){
+        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]){
             if let createTime:Date = attribute[FileAttributeKey.modificationDate] as? Date {
                 return createTime.toString()
             }
@@ -294,7 +294,7 @@ extension FileController{
     
     //MARK: - 获取文件大小
     private func getFileSize(withPath path:String)->String?{
-        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]?){
+        if let attribute = (try? self.fileManager.attributesOfItem(atPath: path) as [FileAttributeKey:Any]){
             if let size:UInt64 = attribute[FileAttributeKey.size]  as? UInt64{
                 return size.toString()
             }
