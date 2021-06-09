@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,FileControlKitDeledate {
+    func fileControlKitDidSelectedFile(with file: FileItemModel) {
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +20,11 @@ class ViewController: UIViewController {
 
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let fileControlKit = FileControlKit()
+        fileControlKit.fileControlKitDidSelected { file in
+            
+        }
+        fileControlKit.fileDelegate = self
         self.present(FileControlKit(), animated: true, completion: nil)
     }
     
