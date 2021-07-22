@@ -22,10 +22,10 @@ class ViewController: UIViewController,FileControlKitDeledate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let fileControlKit = FileControlKit()
         fileControlKit.fileControlKitDidSelected { file in
-            
+            print(file)
         }
         fileControlKit.fileDelegate = self
-        self.present(FileControlKit(), animated: true, completion: nil)
+        self.present(fileControlKit, animated: true, completion: nil)
     }
     
 }
